@@ -5,15 +5,18 @@ import { FormComponent } from './form/form.component';
 
 const routes: Routes = [
 
-  {
-    path: '**',
-    redirectTo: 'regForm',
-    pathMatch: 'full'
-  },
+ 
   {
     path: 'regForm',
     component: FormComponent
-  }
+  },
+{
+  path: 'components',
+  loadChildren: () => import ('./components/components.module').then(m=> m.ComponentsModule)
+}
+
+
+
 ];
 
 @NgModule({
