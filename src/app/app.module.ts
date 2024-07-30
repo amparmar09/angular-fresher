@@ -14,10 +14,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormComponent } from './form/form.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent
+    FormComponent,
+   
   ],
   imports: [
     BrowserModule,
