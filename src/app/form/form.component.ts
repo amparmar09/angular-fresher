@@ -37,15 +37,23 @@ export class FormComponent {
 
   }
 
+ 
+  
+
   passwordMatchValidator(form: FormGroup): ValidationErrors | null {
-    return form.get('password')?.value === form.get('confirmPassword')?.value ? { mismatch: false } : { mismatch: true };
+    return form.get('password')?.value === form.get('confirmPassword')?.value ? null : { mismatch: true };
   }
 
   onSubmit() {
-    console.log(this.form);
+    
     if (this.form.valid) {
+      console.log(this.form.value);
     } else {
       this.form.markAllAsTouched();
+      
     }
   }
+
+  
+
 }

@@ -3,17 +3,22 @@ form {
   max-width: 700px;
   margin: 0 auto;
   padding: 10px;
-  background-color: #f9f9f9;
+  background-color: #462d63;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(18, 164, 71, 0.1);
 }
 
+mat-form-field.example-full-width {
+  height: 20;
+  border: 2px solid black;  
+
+}
 
 table {
   width: 50%;
   margin-bottom: 20px;
   border-collapse: separate;
-  border-spacing: 15px;
+  border-spacing: 10px;
 }
 
 

@@ -7,11 +7,11 @@ const routes: Routes = [
 
   {
     path: '**',
-    redirectTo: '123',
+    redirectTo: 'regForm',
     pathMatch: 'full'
   },
   {
-    path: '123',
+    path: 'regForm',
     component: FormComponent
   }
 ];
