@@ -1,24 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ValidationErrors } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent {
-  form!: FormGroup;
-  hidePassword: boolean = true;
-  hideConfirmPassword: boolean = true;
+export class FormComponent implements OnInit {
+  form: FormGroup;
+  hidePassword = true;
+  hideConfirmPassword = true;
 
-  constructor(private fb: FormBuilder) { }
-
-  ngOnInit() {
-    this.CreatForm();
-  }
-
-  CreatForm() {
-
+  constructor(private fb: FormBuilder, private router: Router) {
     this.form = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10), Validators.pattern('^[a-zA-Z]*$')]],
       middleName: [''],
@@ -34,26 +28,17 @@ export class FormComponent {
     }, {
       validators: this.passwordMatchValidator
     });
-
   }
 
- 
-  
+  ngOnInit(): void {}
 
   passwordMatchValidator(form: FormGroup): ValidationErrors | null {
     return form.get('password')?.value === form.get('confirmPassword')?.value ? null : { mismatch: true };
   }
 
-  onSubmit() {
-    
-    if (this.form.valid) {
-      console.log(this.form.value);
-    } else {
-      this.form.markAllAsTouched();
-      
-    }
+  onSubmit(): void {
+    console.log(this.form.value);
+    sessionStorage.setItem('userData', JSON.stringify(this.form.value));
+    this.router.navigate(['/login']);
   }
-
-  
-
 }
