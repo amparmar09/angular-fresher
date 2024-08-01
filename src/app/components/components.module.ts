@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { ComponentsRoutingModule } from './components-routing.module';
 import { HomeComponent } from './home/home.component';
@@ -21,7 +24,10 @@ import { LoginComponent } from './login/login.component';
   imports: [
     CommonModule,
     ComponentsRoutingModule,
-    MatInputModule
-  ]
+    MatInputModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    
+  ],
 })
 export class ComponentsModule { }

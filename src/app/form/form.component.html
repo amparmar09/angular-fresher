@@ -74,7 +74,6 @@
       <mat-error *ngIf="form.get('password')?.hasError('required')">
         Password is <strong>required</strong>
       </mat-error>
-
       <mat-error *ngIf="form.get('password')?.hasError('minlength')">
         Password must be at least 10 characters long
       </mat-error>
@@ -186,5 +185,7 @@
 
   <div class="button-container">
     <button mat-raised-button type="submit" [disabled]="form.invalid">Submit</button>
-  </div>
+    <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a routerLink="/login"
+      >Login</a></p>
+    </div>
 </form>
