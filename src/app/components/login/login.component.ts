@@ -25,9 +25,10 @@ export class LoginComponent implements OnInit {
 
     if (storedUser && storedUser.email === this.login.value.email && storedUser.password === this.login.value.password) {
       sessionStorage.setItem('isloggedIn', 'true');
-      this.router.navigate(['/regForm']);
+      this.router.navigate(['/home']); 
     } else {
       alert('Invalid Login');
+      this.router.navigate(['/regForm']); 
     }
   }
 }

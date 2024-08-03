@@ -8,14 +8,15 @@ import { FormComponent } from '../form/form.component';
 import { ActivateGuard } from '../activate.guard';
 
 const routes: Routes = [
-    {path: 'about', component : AboutComponent},
-    {path: 'contact', component : ContactComponent},
+    {path: 'about', component : AboutComponent, canActivate:[ActivateGuard]},
+    {path: 'contact', component : ContactComponent, canActivate:[ActivateGuard]},
     {path: 'home', component : HomeComponent, canActivate:[ActivateGuard]},
     {path: 'login', component : LoginComponent},
     {
       path: 'regForm',
       component: FormComponent,
-      canActivate: [ActivateGuard]
+      
+      
       
     }
     

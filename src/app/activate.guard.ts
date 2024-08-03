@@ -21,7 +21,11 @@ export class ActivateGuard implements CanActivate {
     }
   }
 }
-export class loginguard implements CanActivate {
+
+@Injectable({
+  providedIn: 'root'
+})
+export class LoginGuard implements CanActivate {
 
   constructor(private router: Router) {}
 
@@ -30,10 +34,10 @@ export class loginguard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const user = sessionStorage.getItem('userData');
     if (user === null) {
-      return false;
+      return true; 
     } else {
       this.router.navigate(['/home']);
-      return true;
+      return false;
     }
   }
 }
