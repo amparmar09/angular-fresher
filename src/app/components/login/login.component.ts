@@ -8,6 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  
+  
   login: FormGroup;
   hide = true;
 
@@ -28,7 +31,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/home']); 
     } else {
       alert('Invalid Login');
-      this.router.navigate(['/regForm']); 
+      
     }
   }
 }
